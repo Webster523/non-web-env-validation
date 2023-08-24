@@ -1,14 +1,21 @@
 import bean.UserInfo;
 import util.ValidationUtil;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ValidationTest {
     public static void main(String[] args) {
         UserInfo userInfo = new UserInfo();
-//        traditionValidationTest(userInfo);
+        userInfo.setName("Simon Roger");
+        userInfo.setAge(25);
+        userInfo.setEmail("1223334@qq.com");
+        userInfo.setPhone("13312345678");
+        userInfo.setBirthday(LocalDateTime.MIN);
+        userInfo.setPersonalPage("http://www.baidu.com");
         List<String> message = ValidationUtil.validate(userInfo);
         System.out.println(message);
+//        traditionValidationTest(userInfo);
     }
 
     private static void traditionValidationTest(UserInfo userInfo) {
