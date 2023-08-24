@@ -20,13 +20,13 @@ import java.time.LocalDateTime;
 public class UserInfo {
     private Long id;
     // name不能为null、空串、或全是空格的非空串
-    @NotBlank
+    @NotBlank(message = "Your name should not be null or blank.")
     private String name;
     // age为正整数，[1, 800]
     @NotNull
-//    @Min(1)
-//    @Max(800)
-    @Range(min = 1, max = 800)
+    @Min(value = 18, message = "Your age is less than {value}.")
+    @Max(800)
+//    @Range(min = 1, max = 800)
     private Integer age;
     // 格式正确
     @NotBlank
