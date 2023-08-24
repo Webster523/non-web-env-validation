@@ -1,9 +1,14 @@
 import bean.UserInfo;
+import util.ValidationUtil;
+
+import java.util.List;
 
 public class ValidationTest {
     public static void main(String[] args) {
         UserInfo userInfo = new UserInfo();
-        traditionValidationTest(userInfo);
+//        traditionValidationTest(userInfo);
+        List<String> message = ValidationUtil.validate(userInfo);
+        System.out.println(message);
     }
 
     private static void traditionValidationTest(UserInfo userInfo) {

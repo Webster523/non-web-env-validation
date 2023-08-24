@@ -1,5 +1,6 @@
 package bean;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 public class UserInfo {
     private Long id;
     // name不能为null、空串、或全是空格的非空串
+    @NotNull
     private String name;
     // age为正整数，[1, 800]
     private Integer age;
